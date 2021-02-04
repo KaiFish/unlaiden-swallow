@@ -1,90 +1,109 @@
 <!DOCTYPE html>
 <!-- saved from url=(0064)https://ycpcs.github.io/cs320-spring2021/lectures/lecture04.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
+
 		<title>CS 320: Git, Github, GitKraken </title>
 		<link rel="stylesheet" type="text/css" href="./YCPCS template_files/site.css">
 		<link rel="stylesheet" type="text/css" href="./YCPCS template_files/syntax.css">
 	<script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script></head>
 	<body>
 		<div id="content">
-      <div id="header"><a href="https://ycpcs.github.io/cs320-spring2021/">CS 320</a>: Lecture 4: Web Applications</div>
+      <div id="header"><a href="https://ycpcs.github.io/cs320-spring2021/">CS 320</a>: Lecture 4: Version Control</div>
 
-<h1 id="web-applications">Create a GitHub account</h1>
+<h1 id="version-control">git set up</h1>
+
+<h2 id="version-control">Part 1: Create a GitHub account</h2>
 <ul>
-  <li>Go to GitHub.com and sign up</li>
-  <li>Verify your Email</li>
+  <li>Go to <a href="https://github.com">https://github.com</a> and sign up</li>
+  <li>Verify your e-mail</li>
   <ul>
-    <li>If you did not use a .edu email, go to your account settings and add your .edu email as an alternate email: Profile top right corner > Settings > Email</li>
+    <li>If you did not use a .edu email, go to your account settings and add your .edu email as an alternate email: Profile (top right corner) > Settings > Email</li>
   </ul>
   <li>You can then go to https://education.github.com/pack and get the Student Developer pack. This will give you access to thousands of dollars of free credits and materials on tons of platforms</li>
 </ul>
 
-<h1 id="web-applications">Downloading GitHub Desktop</h1>
+<h2 id="version-control">Part 2: Pick a Git Client</h2>
 <ul>
-  <li>Go to https://desktop.github.com (<a href="https://desktop.github.com">link</a>)</li>
-  <li>Make sure you move it from downloads, as it will run in your downloads folder if you let it.</li>
-  <li>Sign in to github.com</li>
-  <li>"Configure Git"</li>
-  <li>Name/Email associated with your commits</li>
-  <li>Click continue</li>
-  <li>Asks for Usage Stats, Hit Finish</li>
+	<p> Git Clients are a visual alternative to doing git through command line. There are many different options for Git Clients. This page walks you through using two free choices: GitHub Desktop and GitKraken.
+		GitHub Desktop is bare bones and very easy to use, but doesn't have many extra features.
+		GitKraken has more features (and a pro version), and also has a visual display of your repository's branches. (more on branches later) </p>
+
+<h3 id="version-control">Downloading GitHub Desktop</h3>
+	<ul>
+	  <li>Go to <a href="https://desktop.github.com">https://desktop.github.com</a></li>
+	  <li>Make sure you move it from downloads, as it will run in your downloads folder if you let it.</li>
+	  <li>Sign in to GitHub.com</li>
+	  <li>You will then be directed to "Configure Git"</li>
+	  <li>Enter the Name/Email you want to be associated with your commits</li>
+	  <li>Click continue</li>
+	  <li>It will ask for usage stats. </li>
+		<li>Click Finish</li>
+	</ul>
+<h3 id="version-control">Downloading GitKraken</h3>
+	<ul>
+	  <li>Go to <a href="https://www.gitkraken.com">https://www.gitkraken.com</a></li>
+	  <li>Enjoy the adorable loading animation</li>
+	  <li>Sign in with GitHub</li>
+	  <ul>
+	    <li>If you are already logged in to GitHub this is as easy as clicking authorize App</li>
+	  </ul>
+  	<li>Fill out your profile name, and then your name and email that will be associated with your commits</li>
+	  <li>Click okay</li>
+	</ul>
 </ul>
 
-<h1 id="web-applications">Downloading GitKraken</h1>
+<h2 id="version-control">Part 3: Create a Repository</h2>
 <ul>
-  <li>Go to https://www.gitkraken.com (<a href="https://www.gitkraken.com">link</a>)</li>
-  <li>Enjoy the adorable loading animation</li>
-  <li>Sign in with GitHub</li>
-  <ul>
-    <li>If you are already logged in this is as easy as clicking authorize App</li>
-  </ul>
-  <li>Fill out your profile Name, and then your name and email that will be associated with your commits</li>
-  <li>Click okay</li>
-  <li>Click continue</li>
-  <li>Asks for Usage Stats, Hit Finish</li>
-</ul>
-
-<h1 id="web-applications">Creating a repository</h1>
-<h2>On GitHub</h2>
+	<p> A repository (or repo) is where your code is stored. You have a remote repository, that is located on a service like GitHub, and a local repository, on your machine.
+		You work on the code on your local repository, and then commit your changes and push them to your remote repository.
+		When you are starting a new repository it is always easier to create your remote repository first, and then bring it to your machine. </p>
+	<h3>On GitHub</h3>
 <img src="./YCPCS template_files/newButton.png"  alt="image">
 <img src="./YCPCS template_files/plusButton.png" alt="image">
 <ul>
-  <li>Either hit the green "New" button next to "Repositories" on the left or click the "+" menu by your profile in the upper right and select "New Repository"</li>
-  <li>Enter a repository name </li>
-  <li>Select public or private. Public repositories can be seen by everyone, private repositories can only be seen by added collaborators</li>
+  <p> To create a new repository on GitHub, you can either hit the green "New" button next to "Repositories" on the left of the home page, or click the "+" menu by your profile in the upper right and select "New Repository." This will take you to a new page: </p>
+	<img src="./YCPCS template_files/newRepo.png" width="600px" height="600px" alt="image">
+	<p><b>In this form:</b></p>
+	<ul>
+	<li>Enter a repository name </li>
+  <li>Select public or private.</li>
+	<ul>
+		<li>Public repositories can be seen by everyone, private repositories can only be seen by added collaborators</li>
+	</ul>
+	</ul>
+	<p><b>Optional:</b></p>
+	<ul>
+	  <li>Add a README - This is a long description of your repository and what it's about (this is highly recommended)</li>
+	  <li>Add .gitignore - This file tells git which files in your repo not to track. It is very useful for Java because you do not want to commit .class files (a repository is only for source code)</li>
+	  <ul>
+	    <li>GitHub is nice and has template .gitignore files based on the language you are using.</li>
+	  </ul>
+	  <li>Add a License - GitHub is dedicated to supporting open source, but an important part of open source is letting people know what can and cannot be done with your code. A license is a document that states those rules. GitHub has <a href="https://choosealicense.com">https://choosealicense.com</a> to help you pick one.</li>
+	</ul>
 </ul>
 
-<img src="./YCPCS template_files/newRepo.png" width="600px" height="600px" alt="image">
 
-<p><b>Optional</b></p>
-<ul>
-  <li>Add a README - This is a long description of your repository and what it's about (this is highly recommended)</li>
-  <li>Add .gitignore - This file tells git which files in your repo not to track. It is very useful for Java because you do not want to commit .class files (a repository is only for source code)</li>
-  <ul>
-    <li>GitHub is nice and has template .gitignore files based on the language you are using.</li>
-  </ul>
-  <li>Add a License - GitHub is dedicated to supporting open source, but an important part of open source is letting people know what can and cannot be done with your code. A license is a document that states those rules. GitHub has https://choosealicense.com (<a href="https://choosealicense.com">link</a>) to help you pick one.</li>
-</ul>
 <p></p>
 <b>Click the green "Create Repository" Button when you are ready</b>
+</ul>
 
-<h1 id="web-applications">Bringing the repository to your computer</h1>
+<h2 id="version-control">Part 4: Clone the Repository</h2>
+<ul>
 <p>The process of bringing a remote (online) repository to your computer is called cloning.
   On your preferred git client select the option for cloning your repository</p>
 
-<h2>Github Desktop</h2>
+<h3>Github Desktop</h3>
 <img src="./YCPCS template_files/GitHubClone.png" width="600px" height="600px" alt="image">
 <ul>
   <li>Click "Clone a Repository from the Internet..."</li>
   <ul>
-    <li>You will be able to search the repositories connected to your github account and select the one you want to clone. It will show you the "Local Path" where it will put the repository. Select "Choose" to change this.</li>
+    <li>You will be able to search the repositories connected to your GitHub account and select the one you want to clone. It will show you the "Local Path" where it will put the repository. Select "Choose" to change this.</li>
     <li><b>IF YOU ARE USING ECLIPSE SELECT YOUR ECLIPSE WORKSPACE FOLDER AS THE LOCATION</b></li>
   </ul>
   <li>Click "Clone"</li>
 </ul>
 
-<h2>GitKraken</h2>
+<h3>GitKraken</h3>
 <img src="./YCPCS template_files/GitKrakenClone.png" width="600px" height="600px" alt="image">
 <ul>
   <li>Click "Clone a repo"</li>
@@ -96,8 +115,9 @@
   <li>Select the Repository you want to clone from the "Repository to clone" drop down</li>
   <li>Click "Clone the repo!"</li>
 </ul>
+</ul>
 
-<h1 id="web-applications">Bringing your Repository into Eclipse</h1>
+<h2 id="version-control">Part 5: Repositories and Eclipse</h2>
 <h2>No Existing Eclipse Project</h2>
 <img src="./YCPCS template_files/eclipseNew.png" width="600px" height="600px" alt="image">
 <ul>
@@ -118,9 +138,9 @@
   <li>Click "Finish"</li>
 </ul>
 
-<h1 id="web-applications">Git</h1>
+<h2 id="version-control">Git</h2>
 <p>Git saves your work, but only when you tell it to.</p>
-<p>The process for telling it what to save to your repository is called committing.</p>     
+<p>The process for telling it what to save to your repository is called committing.</p>
 <p>The repository on your machine is called your local repository. The repository on GitHub is called your remote or upstream repository.</p>
 <p>To save changes to your local repository you do "git add" and then "git commit". To move changes from your local repository to your remote repository you must do a "git push"</p>
 <p>git tracks any and all changes made to the repository. These changes, until you tell git otherwise, are "unstaged," which means that git will not record them.
@@ -151,281 +171,13 @@
 <p>Here, you can click "Push origin" and push your changes to GitHub. (Origin is another name for remote)</p>
 <p>There is also a "Push origin" button on the top bar of the window, with a number indicating how many commits you are pushing.</p>
 
-<!--
-<h1 id="java-web-applications">Java Web Applications</h1>
-
-<p>Java defines an API called J2EE, part of which specifies standard interfaces for developing web applications.</p>
-
-<p>A Java web application consists of <em>servlets</em>, which allow the application to handle HTTP requests.</p>
-
-<p>We could implement a traditional web application by having our servlets generate HTML directly. For example:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    <span class="kn">package</span> <span class="nn">edu.ycp.cs320.lab11.servlet</span><span class="o">;</span>
-
-    <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-
-    <span class="kn">import</span> <span class="nn">javax.servlet.ServletException</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServlet</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">IndexServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
-      <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
-
-      <span class="nd">@Override</span>
-      <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span>
-          <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
-
-        <span class="n">resp</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html"</span><span class="o">);</span>
-        <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">().</span><span class="na">print</span><span class="o">(</span>
-            <span class="s">"&lt;html&gt;"</span> <span class="o">+</span>
-            <span class="s">"  &lt;head&gt;"</span> <span class="o">+</span>
-            <span class="s">"    &lt;title&gt;Index page&lt;/title&gt;"</span> <span class="o">+</span>
-            <span class="s">"  &lt;/head&gt;"</span> <span class="o">+</span>
-            <span class="s">"  &lt;body&gt;"</span> <span class="o">+</span>
-            <span class="s">"    This is the index page"</span> <span class="o">+</span>
-            <span class="s">"  &lt;/body&gt;"</span> <span class="o">+</span>
-            <span class="s">"&lt;/html&gt;"</span><span class="o">);</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-	
-</code></pre></div></div>
-
-<p>Generating HTML embedded in Java string constants is both tedious and error-prone. Fortunately, J2EE gives us a better way to generate HTML, called Java Server Pages (JSPs).</p>
-
-<h2 id="java-server-pages-jsps">Java Server Pages (JSPs)</h2>
-
-<p>The idea behind JSPs is very simple: rather than embedding HTML in Java code, embed the Java code in HTML. The idea is that when generating an HTML page, most of the page is static HTML, but some of the page is generated dynamically. So, the HTML text in a JSP is simply sent verbatim to the client web browser. Through the use of the JSP <em>expression language</em> and JSP <em>tag libraries</em>, dynamic Java code can also be used to generate portions of the HTML document.</p>
-
-<h2 id="model-view-controller-using-servlets-and-jsps">Model-View-Controller using servlets and JSPs</h2>
-
-<p>Before we dive into JSPs, let’s first consider how we want to <em>design</em> a web application. As with all user interfaces, we want to keep the model classes separate from the user interface classes. In a traditional GUI, we can use the model-view-controller (MVC) design pattern to do this. There is an analogue of MVC for web applications called (not very creatively) MVC2.</p>
-
-<p>Here is the basic idea of how a request is handled in MVC2:</p>
-
-<ol>
-  <li>The request parameters and/or form data is decoded and translated into one or more model objects which form the request. These request objects are then sent to a controller.</li>
-  <li>The controller processes the request and produces one or more model objects as the result of the request.</li>
-  <li>A view renders the request and result model objects as HTML that is sent back to the client.</li>
-</ol>
-
-<p>The nice feature of MVC2 is that the application logic is implemented entirely in the controller, and the controllers depend only on model classes. This means that you can write unit tests for the controllers and execute them completely independently of the web application.</p>
-
-<p>In a Java web application, the JSPs are ideal for implementing views: they make it easy to render HTML and include dynamic content (from the result model objects) where necessary.</p>
-
-<h2 id="an-example-mvc2-application-using-servlets-and-jsps">An example MVC2 application using servlets and JSPs</h2>
-
-<p>Here is a web application that uses MVC2 to allow the user to add two numbers and see the result.</p>
-
-<p>The model classes are very simple: they will simply be instances of <strong>java.lang.Double</strong> representing the numbers to be added (the request objects) and the result (the result object).</p>
-
-<p>The controller will take the two request objects (the values to be added), add them, and produce a double result object which is the sum of the values of the request objects.</p>
-
-<p>The view is a JSP which:</p>
-
-<ul>
-  <li>displays a form allowing the user to enter two numbers, along with a submit button</li>
-  <li>generates an HTTP POST request when the submit button is pressed</li>
-  <li>displays the result of the computation (if a result was computed by the controller)</li>
-</ul>
-
-<p>Here is the code. First, the view JSP:</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    <span class="cp">&lt;!DOCTYPE html&gt;</span>
-    <span class="nt">&lt;</span><span class="err">%@</span> <span class="na">taglib</span> <span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span> <span class="na">prefix=</span><span class="s">"c"</span> <span class="err">%</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;</span><span class="err">%@</span> <span class="na">taglib</span> <span class="na">uri=</span><span class="s">"http://java.sun.com/jsp/jstl/functions"</span> <span class="na">prefix=</span><span class="s">"fn"</span> <span class="err">%</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;html&gt;</span>
-      <span class="nt">&lt;head&gt;</span>
-        <span class="nt">&lt;title&gt;</span>Add Numbers<span class="nt">&lt;/title&gt;</span>
-        <span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
-        <span class="nc">.error</span> <span class="p">{</span>
-          <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
-        <span class="p">}</span>
-
-        <span class="nt">td</span><span class="nc">.label</span> <span class="p">{</span>
-          <span class="nl">text-align</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="nt">&lt;/style&gt;</span>
-      <span class="nt">&lt;/head&gt;</span>
-
-      <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">"${! empty errorMessage}"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"error"</span><span class="nt">&gt;</span>${errorMessage}<span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/c:if&gt;</span>
-
-        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"${pageContext.servletContext.contextPath}/addNumbers"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;table&gt;</span>
-            <span class="nt">&lt;tr&gt;</span>
-              <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>First number:<span class="nt">&lt;/td&gt;</span>
-              <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"first"</span> <span class="na">size=</span><span class="s">"12"</span> <span class="na">value=</span><span class="s">"${first}"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
-            <span class="nt">&lt;/tr&gt;</span>
-            <span class="nt">&lt;tr&gt;</span>
-              <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Second number:<span class="nt">&lt;/td&gt;</span>
-              <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"second"</span> <span class="na">size=</span><span class="s">"12"</span> <span class="na">value=</span><span class="s">"${second}"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
-            <span class="nt">&lt;/tr&gt;</span>
-            <span class="nt">&lt;tr&gt;</span>
-              <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">"label"</span><span class="nt">&gt;</span>Result:<span class="nt">&lt;/td&gt;</span>
-              <span class="nt">&lt;td&gt;</span>${result}<span class="nt">&lt;/td&gt;</span>
-            <span class="nt">&lt;/tr&gt;</span>
-          <span class="nt">&lt;/table&gt;</span>
-          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"Submit"</span> <span class="na">name=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Add Numbers!"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;/form&gt;</span>
-      <span class="nt">&lt;/body&gt;</span>
-    <span class="nt">&lt;/html&gt;</span>
-	
-</code></pre></div></div>
-
-<p>Mostly, the view is just HTML that creates a table of the two numbers to be entered. However, there are a couple of JSP-specific details to notice:</p>
-
-<ul>
-  <li>The directive <strong>&lt;%@ taglib uri=”<a href="http://java.sun.com/jsp/jstl/core">http://java.sun.com/jsp/jstl/core</a>” prefix=”c” %&gt;</strong> specifies that we want to use the JSTL core tag library. This allows us to use special tags for things like conditionals and loops. You will notice that we use the <strong>&lt;c:if&gt;</strong> tag to conditionally display an error message if the servlet has specified one.</li>
-  <li>The syntax <strong>${</strong> <em>…</em> <strong>}</strong> specifies a JSTL expression. JSTL expressions can be used to include dynamic content into the HTML document. The JSP above uses this syntax to substitute the values for the first and second input number, the result, and (if there is one) an error message.</li>
-</ul>
-
-<p>Next, here is the servlet code which handles the requests:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    <span class="kn">package</span> <span class="nn">edu.ycp.cs320.lab11.servlet</span><span class="o">;</span>
-
-    <span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-
-    <span class="kn">import</span> <span class="nn">javax.servlet.ServletException</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServlet</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
-
-    <span class="kn">import</span> <span class="nn">edu.ycp.cs320.lab11.controller.AddNumbersController</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumbersServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
-      <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1L</span><span class="o">;</span>
-
-      <span class="nd">@Override</span>
-      <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span>
-          <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
-        <span class="n">req</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">"/_view/addNumbers.jsp"</span><span class="o">).</span><span class="na">forward</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
-      <span class="o">}</span>
-
-      <span class="nd">@Override</span>
-      <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span>
-          <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
-
-        <span class="c1">// Decode form parameters and dispatch to controller</span>
-        <span class="nc">String</span> <span class="n">errorMessage</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="nc">Double</span> <span class="n">result</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">try</span> <span class="o">{</span>
-          <span class="nc">Double</span> <span class="n">first</span> <span class="o">=</span> <span class="n">getDoubleFromParameter</span><span class="o">(</span><span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"first"</span><span class="o">));</span>
-          <span class="nc">Double</span> <span class="n">second</span> <span class="o">=</span> <span class="n">getDoubleFromParameter</span><span class="o">(</span><span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"second"</span><span class="o">));</span>
-
-          <span class="k">if</span> <span class="o">(</span><span class="n">first</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">second</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Please specify two numbers"</span><span class="o">;</span>
-          <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-            <span class="nc">AddNumbersController</span> <span class="n">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AddNumbersController</span><span class="o">();</span>
-            <span class="n">result</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">first</span><span class="o">,</span> <span class="n">second</span><span class="o">);</span>
-          <span class="o">}</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">NumberFormatException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-          <span class="n">errorMessage</span> <span class="o">=</span> <span class="s">"Invalid double"</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="c1">// Add parameters as request attributes</span>
-        <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"first"</span><span class="o">,</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"first"</span><span class="o">));</span>
-        <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"second"</span><span class="o">,</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"second"</span><span class="o">));</span>
-
-        <span class="c1">// Add result objects as request attributes</span>
-        <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"errorMessage"</span><span class="o">,</span> <span class="n">errorMessage</span><span class="o">);</span>
-        <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"result"</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-
-        <span class="c1">// Forward to view to render the result HTML document</span>
-        <span class="n">req</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">"/_view/addNumbers.jsp"</span><span class="o">).</span><span class="na">forward</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
-      <span class="o">}</span>
-
-      <span class="kd">private</span> <span class="nc">Double</span> <span class="nf">getDoubleFromParameter</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">s</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
-          <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-          <span class="k">return</span> <span class="nc">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-	
-</code></pre></div></div>
-
-<p>Most of the code is just parsing request parameters (the input numbers), setting request attributes (the data to be displayed by the view), and forwarding the request to the view JSP. However, the most important part is where the request is dispatched to the controller:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    <span class="nc">AddNumbersController</span> <span class="n">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AddNumbersController</span><span class="o">();</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="n">controller</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">first</span><span class="o">,</span> <span class="n">second</span><span class="o">);</span>
-	
-</code></pre></div></div>
-
-<p>Because only model objects are involved, it would be easy to test the behavior of the controller using a JUnit test.</p>
-
-<p>Finally, the controller:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    <span class="kn">package</span> <span class="nn">edu.ycp.cs320.lab11.controller</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumbersController</span> <span class="o">{</span>
-      <span class="kd">public</span> <span class="nc">Double</span> <span class="nf">add</span><span class="o">(</span><span class="nc">Double</span> <span class="n">first</span><span class="o">,</span> <span class="nc">Double</span> <span class="n">second</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">first</span> <span class="o">+</span> <span class="n">second</span><span class="o">;</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-
-</code></pre></div></div>
-
-<p>Although this controller is trivial, in general a controller can be used to implement arbitrary application logic.</p>
-
-<p>A good test that you have abstracted the controller well is that it is relatively easy to write JUnit tests:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">package</span> <span class="nn">edu.ycp.cs320.lab11.controller</span><span class="o">;</span>
-
-    <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.*;</span>
-
-    <span class="kn">import</span> <span class="nn">org.junit.Before</span><span class="o">;</span>
-    <span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumbersControllerTest</span> <span class="o">{</span>
-      <span class="kd">private</span> <span class="nc">AddNumbersController</span> <span class="n">controller</span><span class="o">;</span>
-
-      <span class="nd">@Before</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AddNumbersController</span><span class="o">();</span>
-      <span class="o">}</span>
-
-      <span class="nd">@Test</span>
-      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAddNumbers</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">assertEquals</span><span class="o">((</span><span class="nc">Double</span><span class="o">)</span> <span class="mf">7.0</span><span class="o">,</span> <span class="n">controller</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mf">3.0</span><span class="o">,</span> <span class="mf">4.0</span><span class="o">));</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-	
-</code></pre></div></div>
-
-<h1 id="web-applications-vs-web-services">Web Applications vs. Web Services</h1>
-
-<p>It is worth considering the distinction between web applications and web services.</p>
-
-<ul>
-  <li>A (RESTful) web service provides access to resources to <em>programs</em>, which communicate with the web service via HTTP requests (GET, PUT, POST, DELETE), returning the resource data in an easily-parsed format such as XML or JSON</li>
-  <li>A web application provides access to resources to <em>human beings</em> who communicate with the web application using a web browser, accepting HTTP GET and POST requests and returning the resource data in a format intended to be displayed visually (HTML, CSS, images.)</li>
-</ul>
-
-<p>Web services and web applications are thus closely related to each other, but provide access to resources for different kinds of clients.</p>
-
-<p>There is no reason why you can’t implement a system which is <em>both</em> a web application and a web service. One approach: write your controllers and model classes so that they can be used by web application servlets/views and also by web service servlets:</p>
-
-<blockquote>
-  <p><img src="./YCPCS template_files/webappAndWebserviceArch.png" alt="image"></p>
-</blockquote>
--->
 			<div id="footer">
 				<a href="https://ycpcs.github.io/cs320-spring2021/README.html">Copyright (c) 2006–2021</a> |
 				Unless indicated otherwise, content is freely redistributable |
 				<a class="cc-img" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./YCPCS template_files/cc-by-sa-80x15.png"></a>
 			</div>
 		</div>
-	
+
 
 
 <!--

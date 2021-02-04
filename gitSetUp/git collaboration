@@ -1,0 +1,12 @@
+add, commit, push is all good and fine when you are working by yourself.
+IT DOES NOT WORK when you are working in a team. To effectively work in a team you must use branches.
+
+git pull
+before you make a branch you must check to make sure there are not new changes on the remote. To get these changes you must "fetch" the remote and "pull" the changes into your local repository
+
+GitHub Desktop
+GitHub Desktop will usually regularly fetch for you, but it is good practice to click the "Fetch" button in the top bar to make sure it is up to date. If there are changes, the "Fetch" button will change to a "Pull" button.
+Clicking "Pull" will merge these changes into your local repository. If this does not work, go to the section labeled "git conflicts"
+
+GitKraken
+GitKraken will fetch and pull in one click. All you need to do is click the "Pull" button at the top of the window. If this does not work, go to the section labeled "git conflicts"
