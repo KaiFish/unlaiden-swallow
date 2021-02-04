@@ -9,6 +9,24 @@
 	<body>
 		<div id="content">
       <div id="header"><a href="https://ycpcs.github.io/cs320-spring2021/">CS 320</a>: Lecture 4: Version Control</div>
+<h1 id="version-control">git theory</h1>
+<h2 id="version-control">Version Control</h2>
+	<ul>
+		????
+	</ul>
+<h2 id="version-control">A Brief History of git</h2>
+<ul>
+	<p> To talk about the history of git you must first talk about the history of Linux. The Linux kernel is a very large and very old open source project. Open Source means that is has many people working on it, not connected to any organization or business.
+		This creates a problem, however; how do contributors share and combine their work, with everyone working at the same time? The answer is version control. In the beginning, also known as the 90s, changes were passed around as patches and archived files.
+		This was not much better than emailing files back and forth. In 2002, the Linux Community moved to BitKeeper, a propietary, but at the time free, version control software. Then in 2005, it became not free.
+		This made a lot of people unhappy and was widely considered a bad move. Linux people did not want to go back to emailing files back and forth, so Linus Torvalds did what Linus Torvalds does, and made his own version control system. Thus, git was born.
+		It had a lot of improvements over other version control systems, like branching, and quickly became the most widely used version control system, much to the dismay of everyone trying to make money off of version control. It remains free and open source, managed by a non-profit.
+		If you want to know anything (or everything) there is to know about git, you can go to <a href="https://git-scm.com">https://git-scm.com</a> where there are comprehensive reference manuals and guides, all for free.
+</ul>
+<h2 id="version-control">What is git?</h2>
+<ul>
+	<img src="./YCPCS template_files/thefirstcommit.png" width="70%" height="70%" alt="image">
+</ul>
 
 <h1 id="version-control">git set up</h1>
 
@@ -58,11 +76,11 @@
 		You work on the code on your local repository, and then commit your changes and push them to your remote repository.
 		When you are starting a new repository it is always easier to create your remote repository first, and then bring it to your machine. </p>
 	<h3>On GitHub</h3>
-<img src="./YCPCS template_files/newButton.png"  alt="image">
-<img src="./YCPCS template_files/plusButton.png" alt="image">
+<img src="./YCPCS template_files/newButton.png"  width="40%" height="40%" alt="image">
+<img src="./YCPCS template_files/plusButton.png" width="40%" height="40%" alt="image">
 <ul>
   <p> To create a new repository on GitHub, you can either hit the green "New" button next to "Repositories" on the left of the home page, or click the "+" menu by your profile in the upper right and select "New Repository." This will take you to a new page: </p>
-	<img src="./YCPCS template_files/newRepo.png" width="600px" height="600px" alt="image">
+	<img src="./YCPCS template_files/newRepo.png" width="70%" height="70%" alt="image">
 	<p><b>In this form:</b></p>
 	<ul>
 	<li>Enter a repository name </li>
@@ -84,7 +102,7 @@
 
 
 <p></p>
-<b>Click the green "Create Repository" Button when you are ready</b>
+<b>Click the green "Create Repository" Button when you are done.</b>
 </ul>
 
 <h2 id="version-control">Part 4: Clone the Repository</h2>
@@ -93,7 +111,7 @@
   On your preferred git client select the option for cloning your repository</p>
 
 <h3>Github Desktop</h3>
-<img src="./YCPCS template_files/GitHubClone.png" width="600px" height="600px" alt="image">
+<img src="./YCPCS template_files/GitHubClone.png" width="50%" height="50%" alt="image">
 <ul>
   <li>Click "Clone a Repository from the Internet..."</li>
   <ul>
@@ -104,7 +122,7 @@
 </ul>
 
 <h3>GitKraken</h3>
-<img src="./YCPCS template_files/GitKrakenClone.png" width="600px" height="600px" alt="image">
+<img src="./YCPCS template_files/GitKrakenClone.png" width="50%" height="50%" alt="image">
 <ul>
   <li>Click "Clone a repo"</li>
   <li>Select GitHub.com as the source</li>
@@ -118,8 +136,13 @@
 </ul>
 
 <h2 id="version-control">Part 5: Repositories and Eclipse</h2>
-<h2>No Existing Eclipse Project</h2>
-<img src="./YCPCS template_files/eclipseNew.png" width="600px" height="600px" alt="image">
+<ul>
+	<p> Eclipse is fussy when it comes to repositories. Below are the instructions for using a repository with no existing Eclipse Project,
+		and for getting an Eclipse Project from a repository you have cloned to your machine.
+		<b>THIS WILL ONLY WORK IF YOU CLONED THE REPOSITORY INTO YOUR ECLIPSE WORKSPACE.</b> </p>
+
+<h3>No Existing Eclipse Project</h3>
+<img src="./YCPCS template_files/eclipseNew.png" width="70%" height="70%" alt="image">
 <ul>
   <li>Click "Create a Java Project"</li>
   <li>UNCHECK "Use Default Location"</li>
@@ -129,47 +152,99 @@
   <li>Click "Finish"</li>
 </ul>
 
-<h2>Existing Eclipse Project</h2>
-<img src="./YCPCS template_files/eclipseImport.png" width="600px" height="600px" alt="image">
+<h3>Existing Eclipse Project</h3>
+<img src="./YCPCS template_files/eclipseImport.png"  width="70%" height="70%" alt="image">
 <ul>
   <li>File > Open Projects from File System</li>
   <li>Click Directory</li>
   <li>In your repository folder, in the Eclipse workspace, select the Eclipse Project folder, click "Open"</li>
   <li>Click "Finish"</li>
 </ul>
+</ul>
 
-<h2 id="version-control">Git</h2>
-<p>Git saves your work, but only when you tell it to.</p>
-<p>The process for telling it what to save to your repository is called committing.</p>
-<p>The repository on your machine is called your local repository. The repository on GitHub is called your remote or upstream repository.</p>
-<p>To save changes to your local repository you do "git add" and then "git commit". To move changes from your local repository to your remote repository you must do a "git push"</p>
-<p>git tracks any and all changes made to the repository. These changes, until you tell git otherwise, are "unstaged," which means that git will not record them.
-  To stage these changes you must do a "git add". To add these to your local repository you must do a "git commit"</p>
+<h1 id="version-control">git mechanics</h1>
+<h2 id="version-control">How to git it</h2>
+<ul>
+<p>Git saves your work, but only when you tell it to. The process for telling it what to save to your repository is called committing.
+	The repository on your machine is called your local repository. The repository on GitHub is called your remote or upstream repository.
+	To save changes to your local repository you do "git add" and then "git commit".
+	To move changes from your local repository to your remote repository you must do a "git push"
+	git tracks any and all changes made to the repository. These changes, until you tell git otherwise, are "unstaged," which means that git will not record them.
+  To stage these changes you must do a "git add". To add these to your local repository you must do a "git commit"
+	The direction below explain how to do this process on GitHub Desktop and GitKraken.
+</p>
 
-<h2>GitKraken</h2>
-<p>The panel on the right shows you all the files that have been changed under "Unstaged Files".</p>
-<p>You can click on any of the file names and GitKraken will show you any changes made between versions. (This is called a "git diff")</p>
-<p>To stage these files click "Stage all changes"</p>
-<p>You can also stage files individually by hovering over the file name and selecting "Stage File"</p>
-<p>Once files are staged they will appear under "Staged Files"</p>
-<p>To commit these files to your repository you MUST add a commit message in the "Summary" field. The message should explain what you did in this commit.</p>
-<p>If you want to be more detailed you can add more information in the "Description" field.</p>
-<p>When you are ready to commit, click the green "Commit changes" Button</p>
-<img src="./YCPCS template_files/GitKrakenPush.png" width="80%" height="80%" alt="image">
-<p>To push these changes to your remote repository, click the "Push" button at the top of the window.</p>
-
-<h2>GitHub Desktop</h2>
-<img src="./YCPCS template_files/GitHubGitAdd.png" alt="image">
+<h3>GitHub Desktop</h3>
+<img src="./YCPCS template_files/GitHubGitAdd.png" width="50%" height="50%"alt="image">
 <p>The Panel on the left shows you all the files that have been changed. GitHub Desktop automatically stages (adds) these for you, which is indicated by a check mark. If you DO NOT want to add a file, you can uncheck it to unstage it.</p>
 <p>You can click on any of the file names and GitHub Desktop will show you the changes made in the file between versions (This is called a "git diff")</p>
-<img src="./YCPCS template_files/GitHubClone.png" width="600px" height="600px" alt="image">
+<img src="./YCPCS template_files/GitHubCommit.png" width="50%" height="50%" alt="image">
 <p>To commit these files to your repository you MUST add a commit message in the "Summary" field. The message should explain what you did in this commit.</p>
 <p>If you want to be more detailed you can add more information in the "Description" field.</p>
 <p>When you are ready to commit, click the blue "Commit" button at the bottom of the right panel.</p>
 <p>Once you have committed your changes, the main section will offer "some friendly suggestions on what to do next" (If it doesn't, select the "changes" tab on the left panel)</p>
-<img src="./YCPCS template_files/GitHubpushh.15.55 AM.png" width="90%" height="90%" alt="image">
+<img src="./YCPCS template_files/GitHubpushh.png" width="70%" height="70%" alt="image">
 <p>Here, you can click "Push origin" and push your changes to GitHub. (Origin is another name for remote)</p>
 <p>There is also a "Push origin" button on the top bar of the window, with a number indicating how many commits you are pushing.</p>
+
+<h3>GitKraken</h3>
+<p>The panel on the right shows you all the files that have been changed under "Unstaged Files".</p>
+<p>You can click on any of the file names and GitKraken will show you any changes made between versions. (This is called a "git diff")</p>
+<p>To stage these files click "Stage all changes"</p>
+<p>You can also stage files individually by hovering over the file name and selecting "Stage File"</p>
+<img src="./YCPCS template_files/GitKrakenAdd.png" width="50%" height="50%" alt="image">
+<p>Once files are staged they will appear under "Staged Files"</p>
+<p>To commit these files to your repository you MUST add a commit message in the "Summary" field. The message should explain what you did in this commit.</p>
+<p>If you want to be more detailed you can add more information in the "Description" field.</p>
+<p>When you are ready to commit, click the green "Commit changes" Button</p>
+<img src="./YCPCS template_files/GitKrakenCommit.png" width="50%" height="50%" alt="image">
+<p>To push these changes to your remote repository, click the "Push" button at the top of the window.</p>
+<img src="./YCPCS template_files/GitKrakenPush.png" width="70%" height="70%" alt="image">
+</ul>
+
+<h1>git collaboration</h1>
+<ul>
+	<p> The process of add, commit, push is all good and fine when you are working by yourself.
+	<b> IT DOES NOT WORK </b>when you are working in a team. To effectively work in a team you must use branches.
+	Before you branch, you must pull. Before you do any of that, you must add collaborators to your repository.</p>
+</ul>
+<h2>Step 0: Add Collaborators</h2>
+<ul>
+	<p>Collaborators are people who are authorized to work on your repository. To add them go to the settings tab and click "Manage access" and then "Invite a collaborator" </p>
+		<img src="./YCPCS template_files/invite.png" width="50%" height="50%" alt="image">
+	<p>A window will come up where you can look up GitHub users by username or email. Select who you want to invite, and GitHub will send an invite to their email. They must accept this email before they can do anything with the repo. </p>
+	<img src="./YCPCS template_files/lookup.png" width="50%" height="50%" alt="image">
+<h3>A Word of Advice </h3>
+<ul>
+	<p> Collaborators can do anything to your repository that you can do, with few limitations. When people do not know what they are doing, or abuse their privleges, things can get very messy very quickly.
+		While you are in the Settings menu, it is highly reccomended that you click on "Branches" and then "Add rule" </p>
+		<img src="./YCPCS template_files/addRule.png" width="50%" height="50%" alt="image">
+		<p> After that apply the following settings and click the green "Create" button: </p>
+		<img src="./YCPCS template_files/branchRule.png" width="70%" height="70%" alt="image">
+		<p> These settings means no one can make and apply changes without someone else reviewing and approving them. This will make your life easier. </p>
+	</ul>
+<h2>Step 1: pull </h2>
+<ul>
+	<p> Before you make a branch you must check to make sure there are no new changes on the remote.
+		To get these changes you must "fetch" the remote and "pull" the changes into your local repository </p>
+	<h3>GitHub Desktop</h3>
+	<ul>
+		<p> GitHub Desktop will usually regularly fetch for you, but it is good practice to click the "Fetch" button in the top bar to make sure it is up to date.
+			If there are changes, the "Fetch" button will change to a "Pull" button. Clicking "Pull" will merge these changes into your local repository.
+			If this does not work, go to the section labeled "git conflicts" </p>
+			<img src="./YCPCS template_files/GitHubPull.png" width="50%" height="50%" alt="image">
+	</ul>
+	<h3>GitKraken</h3>
+	<ul>
+		<p> GitKraken will fetch and pull in one click. All you need to do is click the "Pull" button at the top of the window.
+			If this does not work, go to the section labeled "git conflicts"</p>
+			<img src="./YCPCS template_files/GitKrakenPull.png" width="50%" height="50%" alt="image">
+	</ul>
+</ul>
+<h2> Step 2: branch </h2>
+<ul>
+	<p> Your main branch should always contain working code. You should <b>never</b> program on your main branch. 
+
 
 			<div id="footer">
 				<a href="https://ycpcs.github.io/cs320-spring2021/README.html">Copyright (c) 2006–2021</a> |
