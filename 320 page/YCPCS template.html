@@ -52,27 +52,14 @@
       <h1 id="version-control">git theory</h1>
       <h2 id="version-control">Version Control</h2>
 
-      <p>????</p>
-
-      <h2>KAI LOOK HERE VVV</h2>
-
-      <section>
-        <h2>heading</h2>
-
-        <div class="two-col">
-          <section>
-            <h3>GitHub Desktop</h3>
-            <p>Content</p>
-          </section>
-
-          <section>
-            <h3>GitKraken</h3>
-            <p>Content</p>
-          </section>
-        </div>
-      </section>
-
-      <h2>KAI LOOK HERE ^^^</h2>
+      <p>Version control is a way to keep track of changes made over time and enables the ability to revert to certain changes if necessary.
+				Some version control systems record only changes, but git records something more akin to snapshots.
+				However, at each snapshot, it does not restore files if they have not been changed. Instead, it stores a link to the previous identical file.
+			This makes git much more efficient than other verion control systems. </p>
+			<p> At this stage (and most stages) of your CS career, it is not very important to understand <i> how </i> git works. It works, and it works well.
+				Knowing how to use it is critical and will make you much more employable because everyone uses git.
+				This is how you will work on projects for the rest of your technical life, so it is time to <b> git gud. </b>
+			</p>
 
       <section>
         <h2 id="version-control">A Brief History of git</h2>
@@ -98,10 +85,10 @@
       </section>
 
       <h2 id="version-control">What is git?</h2>
-      <ul>
+			<figure>
         <img src="./YCPCS template_files/thefirstcommit.png" width="70%" height="70%" />
-      </ul>
-
+				<figcaption> From the first git README </figcaption>
+			</figure>
       <h1 id="version-control">git set up</h1>
 
       <section>
@@ -544,8 +531,34 @@
 					<section>
 		        <h2>Step 4: commit</h2>
 						<p>
+							You should commit at logical checkpoints in your progress, like fixing a bug, or finishing a section of logic.
+							When you commit, you should follow the steps as outlined in git mechanics. They will work the same way, except instead of pushing to the main branch,
+							you will be pushing your branch to the remote repository. (GitHub Desktop calls this "Publishing" the branch.) Once your branch is in the remote repository <b> and you are ready to merge it to the main branch </b>, you may proceed to step 5.
 						</p>
 		      </section>
+
+					<section>
+						<h2>Step 5: pull request</h2>
+						<p>
+							It is time to return to your repository on GitHub, and refresh the page if you have left it open. At the top of the repository you should see and alert that "[branch-name] had recent pushes" with a green button that says "Compare & pull request."
+							Click the button.
+						</p>
+						<img src="./YCPCS template_files/compare.png" width="70%"/>
+						<p>
+							This will lead you to a form for opening a pull request, comparing your branch to the main branch. It will auto fill with your commit message as the title, but you can add more description of what you did in the branch in the comment field.
+							When you are done, click the "Create pull request" button.
+						</p>
+						<img src="./YCPCS template_files/openPR.png" width="70%"/>
+						<p>
+							If you set up the previously reccomended repository rule, one of your collaborators must review and approve your pull request. The format of the pull request allows for comments and discussion, so teammates can discuss changes.
+							If you did not, you should be able to merge it automatically, by clicking the "Merge pull request" button. If you cannot merge it, GitHub will not let you, because you have a merge conflict. Please go to the section labeled "merge conflicts" to learn more about this.
+							Otherwise, congratulations, you have merged your branch! Return to step 1.
+						</p>
+					</section>
+<section>
+	<h1>git conflicts</h1>
+	<p> this will be a different lecture. please come back later. if you have a problem contact a tutor </p>
+</section>
 
 
 
